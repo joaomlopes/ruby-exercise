@@ -1,0 +1,93 @@
+<section class="posts">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1">
+
+        <h2 class="center"><%= @post.title %></h2>
+
+        <% if @post.user %>
+
+            <ul class="listing">
+
+              <div class="row">
+
+                <div class="col-md-4 col-md-offset-4 center">
+
+                  <li>Created by:</li>
+
+                  <li><%= link_to gravatar_for(@post.user), user_path(@post.user) %></li>
+
+                  <li class="article-title">
+
+                    <%= link_to @post.user.name, user_path(@post.user) %>
+
+                  </li>
+
+                  <li>
+                    <small>
+
+                      <%= pluralize(@post.user.posts.count, "post") if @post.user.posts %>
+
+                    </small>
+                  </li>
+
+                </div>
+
+              </div>
+
+            </ul>
+
+        <% end %>
+
+        <% if @post.categories.count > 0 %>
+            <div class="row">
+              <div class="col-xs-12 post-meta-details">
+                <ul class="list-inline">
+                  <% @post.categories.each do |category| %>
+                      <li>
+                        <%= link_to "##{category.name}", category_path(category) %>
+                      </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+        <% end %>
+
+        <hr>
+
+        <%= simple_format(@post.body) %>
+
+        <div class="post-actions">
+
+          <% if logged_in? && current_user == @post.user %>
+
+              <%= link_to "Edit this post", edit_post_path(@post), class: "btn btn-xs btn-primary" %>
+
+              <%= link_to "Delete this post", post_path(@post), method: :delete,
+
+                          data: {confirm: "Are you sure you want to delete the post?"},
+
+                          class: "btn btn-xs btn-danger" %>
+
+          <% end %>
+
+          <%= link_to "View all posts", posts_path, class: "btn btn-xs btn-success" %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 comments">
+        <div class="row">
+          <div class="col-xs-12">
+            <%= render @post.comments %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <%= render 'comments/form' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+<section class="posts">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="center">Posts</h1>
+
+        <% if @posts.present? %>
+            <%= render 'post', obj: @posts %>
+        <% else %>
+            <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+        <% end %>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4 center">
+        <%= will_paginate %>
+      </div>
+    </div>
+  </div>
+</section>

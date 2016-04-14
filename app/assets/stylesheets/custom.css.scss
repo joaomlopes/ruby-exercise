@@ -1,0 +1,165 @@
+$navbar-default-bg: transparent;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+a {
+  color: #111;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+section {
+  margin-top: 30px;
+}
+
+/* Navbar */
+.navbar {
+  border-bottom: solid 1px #111;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.navbar .nav li a {
+  color: #111;
+}
+
+.navbar .nav li a:hover {
+  opacity: 0.8;
+}
+/* Navbar */
+
+/* Logo */
+#logo {
+  float: left;
+  font-size: 1em;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  opacity: 0.8;
+}
+/* Logo */
+
+/* Header */
+header {
+  background-image: asset-url('home-bg.jpg');
+  background-size: cover;
+  height: 400px;
+}
+
+header h1 {
+  color: #fff;
+  text-align: center;
+  margin-top: 0;
+  padding: 30px 30px 20px 30px;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+header p {
+  text-align: center;
+}
+
+header p .btn {
+  font-size: 1.5em;
+  background-color: transparent;
+  border: 1px dashed #111;
+  color: #fff;
+}
+
+header p .btn:hover {
+  background-color: transparent;
+  border: 1px solid #111;
+  color: #fff;
+
+}
+/* Header */
+
+/* Footer */
+footer {
+  padding: 50px 0 65px;
+  .list-inline {
+    margin: 0;
+    padding: 0;
+  }
+  .copyright {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+}
+/* Footer */
+
+/* Posts */
+.post-title {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.post-body {
+  border-top: 1px solid #eaeaea;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.post-actions {
+  border-top: 1px solid #eaeaea;
+  padding-top: 5px;
+}
+
+.post-meta-details {
+  border-top: 1px solid #eaeaea;
+  margin-top: 15px;
+}
+
+.listing {
+  list-style: none;
+  padding-left: 0;
+}
+/* Posts */
+
+/* Comments */
+.comments {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: solid 1px #eaeaea;
+  background: #ddd;
+}
+
+.comment-content {
+  border-bottom: solid 1px #eaeaea;
+}
+
+.comment-row {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.comment-actions {
+  padding-bottom: 10px;
+}
+
+.comments .btn[type=submit] {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* Comments */
